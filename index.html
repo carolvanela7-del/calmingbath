@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title> Calming bath</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Figtree:wght@400;500;600&family=Noto+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="announce">Free shipping on orders of 4S or more soaps</div>
+
+<header class="site-header">
+  <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24"><path d="M2 6h20M2 12h20M2 18h20"/></svg></button>
+  <a class="logo" href="#/"></a>
+  <nav id="nav" aria-label="Main">
+    <div class="has-menu">
+      <a class="nav-link" href="#/shop/all">SHOP</a>
+      <ul class="dropdown">
+        <li><a href="#/shop/all">All soaps</a></li>
+        <li><a href="#/shop/new">New arrivals</a></li>
+        <li><a href="#/shop/face">Face soaps</a></li>
+        <li><a href="#/shop/body">Body soaps</a></li>
+        <li><a href="#/shop/sets">Gift sets</a></li>
+      </ul>
+    </div>
+    <a class="nav-link" href="#/about">ABOUT US</a>
+    <a class="nav-link" href="#/account/register">CREATE ACCOUNT</a>
+  </nav>
+  <a class="cart-link" href="#/cart" aria-label="Cart"><svg viewBox="0 0 24 24"><path d="M5 8h14l1 13H4z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg><span class="badge" id="cartCount" hidden>0</span></a>
+</header>
+
+<!-- Home -->
+<div id="home">
+  <!-- Los .mp4 van sueltos junto a este index.html: hero-pc.mp4 (computadora) y hero.mp4 (celular) -->
+  <section class="hero" id="heroBox" aria-label="Welcome">
+    <div class="vid-bg" aria-hidden="true"></div>
+    <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="auto"></video>
+    <div class="copy">
+      <h1>Calming Bath</h1>
+      <p>Cold-process bars with plant oils and natural scents</p>
+      <a class="btn" href="#/shop/all">Shop soaps</a>
+    </div>
+  </section>
+
+  <!-- Fotos pasando: foto1.jpg ... foto3.jpg (si no existen se ve el jabón de reemplazo) -->
+  <section class="hero slides" id="photoShow" aria-roledescription="carousel" aria-label="Photos">
+    <div class="show-item is-on" style="--c:#c9b8ec"><div class="bar"></div></div>
+    <div class="show-item" style="--c:#f2c96a"><div class="bar"></div></div>
+    <div class="show-item" style="--c:#b8d8c3"><div class="bar"></div></div>
+    <button class="show-arrow show-prev" type="button" aria-label="Previous photo">&#8249;</button>
+    <button class="show-arrow show-next" type="button" aria-label="Next photo">&#8250;</button>
+  </section>
+</div>
+
+<!-- Listado -->
+<main class="listing" id="products" hidden>
+  <h1 class="list-title" id="listTitle">All Soaps</h1>
+  <div class="sortbar"><label><span class="sr-only">Sort by</span>
+    <select id="sort"><option value="best">Best selling</option><option value="newest">Newest</option><option value="low">Price, low to high</option><option value="high">Price, high to low</option></select></label></div>
+  <div class="grid" id="grid"></div>
+  <p class="empty" id="empty" hidden>No products found.</p>
+</main>
+
+<!-- Producto -->
+<main class="product" id="productView" hidden></main>
+
+<!-- Carrito -->
+<main class="cart" id="cart" hidden></main>
+
+<!-- About -->
+<main class="info" id="about" hidden>
+  <h1 class="list-title">ABOUT US</h1>
+  <section class="about-card">
+    <p class="tag">OUR STORY</p>
+    <h2>Soap made slowly, by hand</h2>
+    <span class="line"></span>
+    <p class="quote">Every bar cures for four weeks so it lasts longer and treats your skin better.</p>
+  </section>
+</main>
+
+<!-- Crear cuenta -->
+<main class="info" id="register" hidden>
+  <h1 class="list-title">Create account</h1>
+  <form class="form" id="regForm" novalidate>
+    <label for="rFirst">First name</label><input id="rFirst" type="text" autocomplete="given-name">
+    <label for="rLast">Last name</label><input id="rLast" type="text" autocomplete="family-name">
+    <label for="rEmail">Email</label><input id="rEmail" type="email" autocomplete="email">
+    <label for="rPass">Password</label><input id="rPass" type="password" autocomplete="new-password">
+    <p class="form-msg" id="regMsg" role="status" aria-live="polite"></p>
+    <button type="submit" class="btn">Create</button>
+  </form>
+</main>
+
+<footer class="site-footer">
+  <section class="foot-main">
+    <div>
+      <h3>NEWSLETTER</h3>
+      <p>Sign up for new scents, offers and more.</p>
+      <form id="newsForm" novalidate>
+        <input type="email" id="nEmail" placeholder="Your email" aria-label="Your email" autocomplete="email">
+        <button type="submit" class="btn">Subscribe</button>
+        <p class="form-msg" id="newsMsg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+    <div>
+      <h3>INFORMATION</h3>
+      <p>Write to us for quick support.</p>
+      <p><b>Email:</b> hello@sabilasoap.com<br><b>Store:</b> San Salvador, El Salvador</p>
+    </div>
+  </section>
+  <p class="copy-line">© 2026, <a href="#/"></a></p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
